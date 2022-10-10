@@ -1,6 +1,9 @@
 package week01;
 
 
+/**
+ * 合并有序链表
+ */
 class ListNode {
     int val;
     ListNode next;
@@ -27,20 +30,13 @@ public class work02 {
         }
     }
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-
-        ListNode headNode = new ListNode();
         if(list1 == null){
-            headNode = list2;
-            return headNode;
+            return list2;
         }
         if(list2 == null){
-            headNode = list1;
-            return headNode;
+            return list1;
         }
-        if(list1 == null && list2 == null){
-            return headNode;
-        }
-
+        ListNode headNode = new ListNode();
         if(list1.val <= list2.val){
             headNode = list1;
             list1 = list1.next;
