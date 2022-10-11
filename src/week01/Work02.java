@@ -12,7 +12,7 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
-public class work02 {
+public class Work02 {
     public static void main(String[] args) {
         ListNode listNode01 = new ListNode(2);
 //        listNode01.next = new ListNode(2);
@@ -22,7 +22,7 @@ public class work02 {
 //        listNode02.next = new ListNode(3);
 //        listNode02.next.next = new ListNode(4);
 
-        ListNode listNode = new work02().mergeTwoLists(listNode01, listNode02);
+        ListNode listNode = new Work02().mergeTwoLists(listNode01, listNode02);
 
         while (listNode != null){
             System.out.println(listNode.val);
