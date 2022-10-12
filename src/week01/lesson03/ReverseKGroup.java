@@ -4,11 +4,12 @@ public class ReverseKGroup {
 
     public static void main(String[] args) {
         ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(2);
-        listNode.next.next = new ListNode(3);
-        listNode.next.next.next = new ListNode(4);
-        listNode.next.next.next.next = new ListNode(5);
-        ListNode listNode1 = new ReverseKGroup().reverseKGroup(listNode,1);
+        ListNode head = listNode;
+        for(int i = 0; i < 5; i++){
+            listNode.next = new ListNode(2+i);
+            listNode = listNode.next;
+        }
+        ListNode listNode1 = new ReverseKGroup().reverseKGroup(head,2);
         while (listNode1 != null){
             System.out.println(listNode1.val);
             listNode1 = listNode1.next;
