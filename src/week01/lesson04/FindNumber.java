@@ -7,23 +7,25 @@ class DoubleListNode{
     int val;
     DoubleListNode next;
     DoubleListNode pre;
-    DoubleListNode() {}
     DoubleListNode(int val, int index) { this.val = val; this.index = index;}
-    DoubleListNode(int val, int index, DoubleListNode next, DoubleListNode pre) { this.val = val; this.next = next; this.pre = pre;}
 }
 
 public class FindNumber {
     public static void main(String[] args) {
         int[] array = {2, 1, 3, 5, 4};
+        //todo: 保存原始数组
         int[] arrayCopy = new int[array.length];
         for(int i = 0; i < array.length; i++){
             arrayCopy[i] = array[i];
         }
+        //todo：建立数值与索引的映射关系
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < array.length; i++){
             map.put(array[i],i);
         }
+        //todo: 将原始数据快排
         quickSort(array,0,array.length-1);
+        //todo：创建有序双向链表存储value和index
         DoubleListNode head = new DoubleListNode(array[0],map.get(array[0]));
         DoubleListNode temp = head;
         for(int i = 1; i < array.length; i++){
@@ -41,8 +43,10 @@ public class FindNumber {
             head.pre = pre;
         }
 
+        //todo: 结果存如map结构中
         HashMap<Integer, Integer> result = new HashMap<>();
         for(int i = arrayCopy.length-1 ; i > 0; i --){
+            //todo：找到node
             DoubleListNode doubleListNode = find(start, arrayCopy[i]);
             int left;
             int leftIndex;
@@ -73,6 +77,7 @@ public class FindNumber {
             }else {
 
             }
+            //todo：删除node
             delete(doubleListNode);
         }
     }

@@ -12,7 +12,7 @@ public class DoublyLinkedList {
         tail.pre = head;
     }
 
-    public void addFromHead(int val){
+    public void addBehindHead(int val){
         DoublyNode node = new DoublyNode(val);
         DoublyNode temp = head.next;
         head.next = node;
@@ -21,7 +21,7 @@ public class DoublyLinkedList {
         temp.pre = node;
     }
 
-    public void addFromTail(int val){
+    public void addBeforeTail(int val){
         DoublyNode node = new DoublyNode(val);
         DoublyNode temp = head.next;
         head.next = node;
