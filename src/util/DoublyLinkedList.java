@@ -23,29 +23,17 @@ public class DoublyLinkedList {
 
     public void addBeforeTail(int val){
         DoublyNode node = new DoublyNode(val);
-        DoublyNode temp = head.next;
-        head.next = node;
-        node.pre = head;
-        node.next = temp;
-        temp.pre = node;
+        DoublyNode temp = tail.pre;
+        temp.next = node;
+        node.pre = temp;
+        node.next = tail;
+        tail.pre = node;
     }
 
     public void addBeforeNode(int val){
-        DoublyNode node = new DoublyNode(val);
-        DoublyNode temp = head.next;
-        head.next = node;
-        node.pre = head;
-        node.next = temp;
-        temp.pre = node;
     }
 
     public void addBehindNode(int val){
-        DoublyNode node = new DoublyNode(val);
-        DoublyNode temp = head.next;
-        head.next = node;
-        node.pre = head;
-        node.next = temp;
-        temp.pre = node;
     }
 
     public void deleteNode(int val){
@@ -62,9 +50,17 @@ public class DoublyLinkedList {
 
     public void printList(){
         DoublyNode temp = head.next;
+        System.out.print("->");
         while (temp != tail){
-            System.out.println(temp.val);
+            System.out.print(temp.val+"->");
             temp = temp.next;
+        }
+        System.out.println();
+        System.out.print("<-");
+        DoublyNode temp1 = head.next;
+        while (temp1 != tail){
+            System.out.print(temp1.val+"<-");
+            temp1 = temp1.next;
         }
     }
 }
