@@ -10,6 +10,7 @@ public class IsValid {
     }
     public boolean isValid(String s) {
         if(s.length() % 2 != 0) return false;
+        //todo：创建栈存储左括号
         Stack<Character> stack = new Stack<>();
         for(char c : s.toCharArray()){
             if(c == '(' || c == '[' || c == '{'){
