@@ -1,8 +1,5 @@
-package week01.lesson06;
+package week01;
 
-import com.sun.jmx.remote.internal.ArrayQueue;
-
-import java.util.Stack;
 
 public class Work03 {
     public static void main(String[] args) {
