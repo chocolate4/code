@@ -3,6 +3,7 @@ package week01.lesson05;
 import java.util.LinkedList;
 import java.util.Stack;
 
+//todo：引入其他数据结构来维护一个值
 public class MinStack {
     //todo：栈本身
     Stack<Integer> stack = new Stack<>();
