@@ -4,6 +4,7 @@ import com.oracle.tools.packager.Log;
 
 import java.util.HashSet;
 
+//todo: 方向标识 方向数组 二维直角坐标系将维
 public class RobotSim {
     public static void main(String[] args) {
         new RobotSim().robotSim(new int[]{4,-1,4,-2,4},new int[][]{{2,4}});
