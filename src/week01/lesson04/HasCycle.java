@@ -1,5 +1,6 @@
 package week01.lesson04;
 
+
 class ListNode {
     int val;
     ListNode next;
@@ -9,6 +10,7 @@ class ListNode {
     }
 }
 
+//todo：快慢指针
 public class HasCycle {
     public boolean hasCycle(ListNode head) {
         if(head == null) return false;
