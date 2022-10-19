@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Stack;
 
+
+//todo：滑动窗口 map比较 使用map比较来简化排列组合
 public class FindSubstring {
     public static void main(String[] args) {
         StringBuilder s = new StringBuilder();
@@ -32,28 +34,22 @@ public class FindSubstring {
 
     public boolean valid(String text,HashMap<String,Integer> wordMap, Integer wordLength){
         HashMap<String, Integer> textMap = new HashMap<>();
+        //todo ： 滑动窗口
         for(int i = 0; i <= text.length()-wordLength; i+=wordLength){
             String word = text.substring(i, i + wordLength);
             textMap.put(word,textMap.getOrDefault(word,0)+1);
         }
-        System.out.println(wordMap.get("a"));
-        System.out.println(textMap.get("a"));
-//        System.out.println(equalMap(wordMap,textMap));
         if(!equalMap(wordMap,textMap)) return false;
         return true;
     }
 
+    //todo : 比较两个map是否一致
     public boolean equalMap(HashMap<String,Integer> map1,HashMap<String,Integer> map2){
         for(String key : map1.keySet()){
-            System.out.println(map2.containsKey(key));
-            System.out.println(map2.get(key));
-            System.out.println(map1.get(key));
-            System.out.println(map2.get(key) == (map1.get(key)));
-            System.out.println(map2.get(key).equals(map1.get(key)));
             if(!(map2.containsKey(key) && map2.get(key).equals(map1.get(key)))) return false;
         }
         for(String key : map2.keySet()){
-            if(!(map1.containsKey(key) && map1.get(key) == map2.get(key))) return false;
+            if(!(map1.containsKey(key) && map1.get(key).equals(map2.get(key)))) return false;
         }
         return true;
     }
