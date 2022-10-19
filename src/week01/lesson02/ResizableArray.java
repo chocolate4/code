@@ -63,6 +63,7 @@ public class ResizableArray {
     public int popBack(){
         int pop = array[size-1];
         size--;
+        //todo：0.25可以避免特殊情况频繁扩缩容
         if(size <= 0.25*capcity){
             capcity = (int) (0.5*capcity);
             int[] tmp = new int[capcity];
