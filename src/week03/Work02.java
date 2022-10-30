@@ -1,7 +1,7 @@
 package week03;
 
 /**
- * 二叉搜素树转二叉树
+ * 二叉搜素树转累加二叉树
  */
 public class Work02 {
 

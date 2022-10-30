@@ -1,24 +1,24 @@
+import com.sun.tools.corba.se.idl.InterfaceGen;
+import util.DoublyLinkedList;
+import week01.lesson02.ResizableArray;
+import week01.lesson05.MinStack;
+import week02.lesson04.LRUCache;
 
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        final int[] ints = {0,1,1,0,2,0};
-        new Test().moveZeroes(ints);
-    }
-    public void moveZeroes(int[] nums) {
-        int index = 0;
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] != 0){
-                nums[index] = nums[i];
-                index++;
-            }
-        }
-
-        for(int i = index; i < nums.length; i++){
-            nums[i] = 0;
-        }
-        for(int i : nums){
-            System.out.println(i);
-        }
+        LRUCache lruCache = new LRUCache(2);
+        System.out.println(lruCache.get(2));
+        lruCache.put(2,6);
+        System.out.println(lruCache.get(1));
+        lruCache.put(1,5);
+        lruCache.put(1,2);
+        System.out.println(lruCache.get(1));
+        System.out.println(lruCache.get(2));
+//        lruCache.put(4,4);
+//        System.out.println(lruCache.get(1));
+//        System.out.println(lruCache.get(3));
+//        System.out.println(lruCache.get(4));
     }
 }
