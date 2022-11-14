@@ -1,17 +1,14 @@
 package week05;
 
-import com.sun.jmx.remote.internal.ArrayQueue;
+
 import javafx.util.Pair;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Queue;
 
 public class Work02 {
     public static void main(String[] args) {
-        boolean[][] visited1 = new boolean[1][1];
-        System.out.println(visited1[0][0]);
         char[][] board = new char[][]{{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
         new Work02().solve(board);
 //        System.out.println(board[1][2]);
@@ -21,16 +18,15 @@ public class Work02 {
     int n;
     boolean[][] visited;
     Queue<Pair<Integer,Integer>> queue;
-    ArrayList<ArrayList<Pair<Integer,Integer>>> ans;
 
     public void solve(char[][] board) {
-        m = board.length;
-        n = board[0].length;
-        visited = new boolean[m][n];
+        m = board.length; //行
+        n = board[0].length; //列
+        visited = new boolean[m][n]; //状态数组
         queue = new ArrayDeque<>(m*n);
-        ans = new ArrayList<>();
         for(int i = 0; i < m ; i++){
             for(int j = 0; j < n; j++){
+                //todo 没有被访问过的 O
                 if(visited[i][j] == false && board[i][j] == 'O'){
                     dfs(i,j,board);
                 }
@@ -39,10 +35,10 @@ public class Work02 {
     }
 
     public void dfs(int i, int j,char[][] board){
-        int[] dx = {-1,0,0,1};
-        int[] dy = {0,1,-1,0};
+        int[] dx = {-1,0,0,1}; //方向数组
+        int[] dy = {0,1,-1,0}; //方向数组
         queue.add(new Pair<>(i,j));
-        ArrayList<Pair<Integer, Integer>> pairs = new ArrayList<>();
+        ArrayList<Pair<Integer, Integer>> pairs = new ArrayList<>(); //记录
         Boolean flag = true;
         while (!queue.isEmpty()){
             int mm = queue.peek().getKey();
@@ -60,12 +56,16 @@ public class Work02 {
                 visited[mx][ny] = true;
             }
         }
+        //todo 判断O 是否在边界
         for(Pair p : pairs){
-            if((int) p.getKey() == 0 || (int) p.getKey() == m-1) flag = true;
-            if((int) p.getValue() == 0 || (int) p.getValue() == n-1) flag = true;
+            if((int) p.getKey() == 0 || (int) p.getKey() == m-1) flag = false;
+            if((int) p.getValue() == 0 || (int) p.getValue() == n-1) flag = false;
         }
+        //todo 修改
         if(flag == true){
-            ans.add(new ArrayList<>(pairs));
+            for(Pair p : pairs){
+                board[(int) p.getKey()][(int) p.getValue()] = 'X';
+            }
         }
     }
 }
