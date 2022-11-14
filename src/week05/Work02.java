@@ -8,12 +8,11 @@ import java.util.ArrayList;
 import java.util.Queue;
 
 public class Work02 {
-    public static void main(String[] args) {
-        char[][] board = new char[][]{{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
-        new Work02().solve(board);
-//        System.out.println(board[1][2]);
-    }
-
+//    public static void main(String[] args) {
+//        char[][] board = new char[][]{{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
+//        new Work02().solve(board);
+////        System.out.println(board[1][2]);
+//    }
     int m;
     int n;
     boolean[][] visited;
