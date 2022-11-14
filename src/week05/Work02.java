@@ -28,13 +28,13 @@ public class Work02 {
             for(int j = 0; j < n; j++){
                 //todo 没有被访问过的 O
                 if(visited[i][j] == false && board[i][j] == 'O'){
-                    dfs(i,j,board);
+                    bfs(i,j,board);
                 }
             }
         }
     }
 
-    public void dfs(int i, int j,char[][] board){
+    public void bfs(int i, int j,char[][] board){
         int[] dx = {-1,0,0,1}; //方向数组
         int[] dy = {0,1,-1,0}; //方向数组
         queue.add(new Pair<>(i,j));
