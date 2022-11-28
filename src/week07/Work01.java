@@ -24,7 +24,7 @@ public class Work01 {
         boolean flag = false;
         for(int i = 0; i <= res; i++){  //todo 随时更新可跳跃到的位置
             res = Math.max(i+nums[i],res);
-            if(res >= nums.length - 1) {flag = true; break;}
+            if(res >= nums.length - 1) {flag = true; break;} //todo 发现可以跳到则退出循环
         }
         return flag;
     }
