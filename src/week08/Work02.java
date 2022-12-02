@@ -42,8 +42,7 @@ public class Work02 {
 
     private int find(int x){
         if(fa[x] == x) return x;
-        x = fa[x];
-        return fa[x] = find(x);
+        return fa[x] = find(fa[x]);
     }
 
     private void unionSet(int x, int y){
