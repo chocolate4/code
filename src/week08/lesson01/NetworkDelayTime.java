@@ -11,7 +11,7 @@ public class NetworkDelayTime {
         for(int i = 0; i < n+1; i++){
             dist[i] = 100000000;
         }
-        //todo 3.开始点
+        //todo 3.起始点
         dist[k] = 0;
         //todo 4.Bellman_ford算法
         //todo n-1次循环 dist[x] + z > dist[y] => dist[y] = dist[x] + z
